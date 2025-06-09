@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trabalho do Robson</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background-color: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .brasao {
+      width: 60px;
+      height: auto;
+    }
+
+    .container-imagens {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 40px;
+    }
+
+    .post {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .post img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .grupo-botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .interacoes,
+    .mostrar-ocultar {
+      display: flex;
+      gap: 10px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .post button {
+      padding: 8px 12px;
+      background-color: #0095f6;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .caixa-comentario {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .caixa-comentario input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .formulario input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .suporte {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .info-inferior {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Agrinho</h1>
+    <img src="Brasão.jpg" alt="Brasão do Paraná" class="brasao">
+  </header>
+
+  <main class="container-imagens">
+
+    <div class="post">
+      <img src="agrinho.jpg" alt="Imagem Agrinho">
+      <div class="grupo-botoes">
+        <div class="interacoes">
+          <button class="curtir">Curtir</button>
+          <button class="comentar">Comentar</button>
+        </div>
+      </div>
+      <div class="caixa-comentario">
+        <input type="text" placeholder="Adicione um comentário..." />
+        <button>Postar</button>
+      </div>
+    </div>
+
+    <div class="post">
+      <img id="gifCima" src="campox.jpg" alt="Imagem de cima" style="display:none;">
+      <div class="grupo-botoes">
+        <div class="interacoes">
+          <button class="curtir">Curtir</button>
+          <button class="comentar">Comentar</button>
+        </div>
+        <div class="mostrar-ocultar">
+          <button onclick="mostrarGifCima()">Mostrar</button>
+          <button onclick="ocultarGifCima()">Ocultar</button>
+        </div>
+      </div>
+      <div class="caixa-comentario">
+        <input type="text" placeholder="Adicione um comentário..." />
+        <button>Postar</button>
+      </div>
+    </div>
+
+    <div class="post">
+      <img id="gifBaixo" src="agrito.jpg" alt="Imagem da pessoa andando" style="display:none;">
+      <div class="grupo-botoes">
+        <div class="interacoes">
+          <button class="curtir">Curtir</button>
+          <button class="comentar">Comentar</button>
+        </div>
+        <div class="mostrar-ocultar">
+          <button onclick="mostrarGifBaixo()">Mostrar</button>
+          <button onclick="ocultarGifBaixo()">Ocultar</button>
+        </div>
+      </div>
+      <div class="caixa-comentario">
+        <input type="text" placeholder="Adicione um comentário..." />
+        <button>Postar</button>
+      </div>
+    </div>
+
+  </main>
+
+  <section class="formulario">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="seu@email.com" />
+
+    <label for="celular">Celular:</label>
+    <input type="tel" id="celular" name="celular" placeholder="(99) 99999-9999" />
+
+    <button type="submit">Enviar</button>
+  </section>
+
+  <div class="suporte">Suporte</div>
+
+  <footer class="info-inferior" tabindex="0">
+    Concurso do Paraná: Agrinho <br><br>
+    Participe e saiba mais sobre o maior concurso educacional do estado!
+  </footer>
+
+  <script>
+    function mostrarGifCima() {
+      document.getElementById("gifCima").style.display = "block";
+    }
+    function ocultarGifCima() {
+      document.getElementById("gifCima").style.display = "none";
+    }
+    function mostrarGifBaixo() {
+      document.getElementById("gifBaixo").style.display = "block";
+    }
+    function ocultarGifBaixo() {
+      document.getElementById("gifBaixo").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
